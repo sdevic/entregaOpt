@@ -40,7 +40,10 @@ class Factura{
 //Creo una funcion para cargar la factura y la guardo en el storage dentro de un array
 
 function cargarFactura(){
-    console.log(facturas);
+        clientes.value="";
+        productos.value="";
+        valor.value="";
+    
     document.getElementById("nuevaFactura").style.display = "block";
     document.getElementById("facturaGenerada").style.display = "none";
    
@@ -78,13 +81,17 @@ function mostrarFacturaCargada(){
     const volverFactura = document.querySelector('#verFactura');
     const nCliente = document.querySelector('#clientesFac');
     nCliente.value = cliente;
+    const nProducto = document.querySelector('#productosFac');
+    nProducto.value = producto;
+    const nPrecio = document.querySelector('#valorFac');
+    nPrecio.value = precio;
+    
+    
     volverFactura.addEventListener("submit",(e) =>{
         e.preventDefault();
-       
+      
         
-        clientes.value="";
-        productos.value="";
-        valor.value="";
+        
         cargarFactura();
         
 
